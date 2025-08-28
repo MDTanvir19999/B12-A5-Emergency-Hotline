@@ -6,7 +6,7 @@
   <title>Emergency Service Directory</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="assets/my-logo.png">
+  <link rel="icon" type="image/png" href="assets/logo-dark.png">
 </head>
 <body class="bg-gray-100 font-sans">
 
@@ -14,7 +14,7 @@
   <header class="bg-white shadow-md p-4 flex items-center justify-between">
     <div class="flex items-center space-x-2">
       <!-- Custom Logo -->
-      <img src="assets/my-logo.png" alt="My Logo" class="w-10 h-10">
+      <img src="assets/logo.png" alt="My Logo" class="w-10 h-10 rounded-full">
       <h1 class="text-lg font-bold text-green-700">Emergency Service</h1>
     </div>
     <div class="flex space-x-4 items-center">
@@ -24,55 +24,132 @@
     </div>
   </header>
 
-  <!-- Title -->
-  <div class="text-center mt-6">
-    <h2 class="text-2xl font-bold text-green-700">Emergency Service Directory</h2>
-    <p class="text-gray-600">Government Emergency Services at Your Fingertip – A Project by Government of the People’s Republic of Bangladesh</p>
+  <!-- Banner -->
+  <section class="bg-gradient-to-r from-green-700 to-green-500 text-white py-8 px-6 flex justify-between items-center">
+    <div>
+      <h2 class="text-3xl font-bold">Emergency Service Directory</h2>
+      <p class="text-sm">Government Emergency Services at Your Fingertip – A Project by Government of the People’s Republic of Bangladesh</p>
+    </div>
+    <img src="assets/logo.png" alt="Gov Logo" class="w-16 h-16 rounded-full border-2 border-white">
+  </section>
+
+  <!-- Main Content -->
+  <div class="flex flex-col lg:flex-row max-w-7xl mx-auto mt-6 px-4 gap-6">
+    
+    <!-- Cards -->
+    <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 flex-1">
+      
+      <div class="service-card">
+        <h3 class="title">National Emergency Number</h3>
+        <p class="subtitle">National Emergency</p>
+        <p class="number">999</p>
+        <span class="tag">All</span>
+        <div class="actions">
+          <button onclick="copyNumber('999')" class="btn-secondary">📋 Copy</button>
+          <a href="tel:999" onclick="logCall('National Emergency Number','999')" class="btn-primary">📞 Call</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <h3 class="title">Police Helpline Number</h3>
+        <p class="subtitle">Police</p>
+        <p class="number">999</p>
+        <span class="tag">Police</span>
+        <div class="actions">
+          <button onclick="copyNumber('999')" class="btn-secondary">📋 Copy</button>
+          <a href="tel:999" onclick="logCall('Police Helpline','999')" class="btn-primary">📞 Call</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <h3 class="title">Fire Service Number</h3>
+        <p class="subtitle">Fire Service</p>
+        <p class="number">999</p>
+        <span class="tag">Fire</span>
+        <div class="actions">
+          <button onclick="copyNumber('999')" class="btn-secondary">📋 Copy</button>
+          <a href="tel:999" onclick="logCall('Fire Service','999')" class="btn-primary">📞 Call</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <h3 class="title">Ambulance Service</h3>
+        <p class="subtitle">Ambulance</p>
+        <p class="number">1994-999999</p>
+        <span class="tag">Health</span>
+        <div class="actions">
+          <button onclick="copyNumber('1994-999999')" class="btn-secondary">📋 Copy</button>
+          <a href="tel:1994999999" onclick="logCall('Ambulance','1994-999999')" class="btn-primary">📞 Call</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <h3 class="title">Women & Child Helpline</h3>
+        <p class="subtitle">Women & Child</p>
+        <p class="number">109</p>
+        <span class="tag">Help</span>
+        <div class="actions">
+          <button onclick="copyNumber('109')" class="btn-secondary">📋 Copy</button>
+          <a href="tel:109" onclick="logCall('Women & Child Helpline','109')" class="btn-primary">📞 Call</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <h3 class="title">Anti-Corruption Helpline</h3>
+        <p class="subtitle">Anti-Corruption</p>
+        <p class="number">106</p>
+        <span class="tag">Govt.</span>
+        <div class="actions">
+          <button onclick="copyNumber('106')" class="btn-secondary">📋 Copy</button>
+          <a href="tel:106" onclick="logCall('Anti-Corruption','106')" class="btn-primary">📞 Call</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <h3 class="title">Electricity Helpline</h3>
+        <p class="subtitle">Electricity Outage</p>
+        <p class="number">16216</p>
+        <span class="tag">Electricity</span>
+        <div class="actions">
+          <button onclick="copyNumber('16216')" class="btn-secondary">📋 Copy</button>
+          <a href="tel:16216" onclick="logCall('Electricity','16216')" class="btn-primary">📞 Call</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <h3 class="title">Brac Helpline</h3>
+        <p class="subtitle">Brac</p>
+        <p class="number">16445</p>
+        <span class="tag">NGO</span>
+        <div class="actions">
+          <button onclick="copyNumber('16445')" class="btn-secondary">📋 Copy</button>
+          <a href="tel:16445" onclick="logCall('Brac','16445')" class="btn-primary">📞 Call</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <h3 class="title">Bangladesh Railway Helpline</h3>
+        <p class="subtitle">Bangladesh Railway</p>
+        <p class="number">163</p>
+        <span class="tag">Travel</span>
+        <div class="actions">
+          <button onclick="copyNumber('163')" class="btn-secondary">📋 Copy</button>
+          <a href="tel:163" onclick="logCall('Bangladesh Railway','163')" class="btn-primary">📞 Call</a>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Call History -->
+    <aside class="w-full lg:w-1/3 bg-white rounded-lg shadow-md p-4 h-fit">
+      <div class="flex justify-between items-center mb-3">
+        <h3 class="font-bold text-lg">📖 Call History</h3>
+        <button onclick="clearHistory()" class="text-red-500 hover:underline">Clear</button>
+      </div>
+      <ul id="callHistory" class="space-y-2 text-sm text-gray-700"></ul>
+    </aside>
+
   </div>
-
-  <!-- Main Grid -->
-  <main class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 max-w-7xl mx-auto">
-
-    <div class="service-card">
-      <h3 class="title">National Emergency Number</h3>
-      <p class="subtitle">National Emergency</p>
-      <p class="number">999</p>
-      <div class="actions">
-        <button onclick="copyNumber('999')" class="btn-secondary">📋 Copy</button>
-        <a href="tel:999" onclick="logCall('National Emergency Number','999')" class="btn-primary">📞 Call</a>
-      </div>
-    </div>
-
-    <div class="service-card">
-      <h3 class="title">Police Helpline Number</h3>
-      <p class="subtitle">Police</p>
-      <p class="number">999</p>
-      <div class="actions">
-        <button onclick="copyNumber('999')" class="btn-secondary">📋 Copy</button>
-        <a href="tel:999" onclick="logCall('Police Helpline','999')" class="btn-primary">📞 Call</a>
-      </div>
-    </div>
-
-    <div class="service-card">
-      <h3 class="title">Fire Service Number</h3>
-      <p class="subtitle">Fire Service</p>
-      <p class="number">999</p>
-      <div class="actions">
-        <button onclick="copyNumber('999')" class="btn-secondary">📋 Copy</button>
-        <a href="tel:999" onclick="logCall('Fire Service','999')" class="btn-primary">📞 Call</a>
-      </div>
-    </div>
-
-  </main>
-
-  <!-- Call History -->
-  <aside class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-4 mt-6">
-    <div class="flex justify-between items-center mb-3">
-      <h3 class="font-bold text-lg">📖 Call History</h3>
-      <button onclick="clearHistory()" class="text-red-500 hover:underline">Clear</button>
-    </div>
-    <ul id="callHistory" class="space-y-2 text-sm text-gray-700"></ul>
-  </aside>
 
   <script src="script.js"></script>
 </body>

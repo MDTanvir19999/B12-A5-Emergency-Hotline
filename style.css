@@ -1,5 +1,5 @@
 .service-card {
-  @apply bg-white shadow-md rounded-lg p-5 transition hover:shadow-lg;
+  @apply bg-white shadow-md rounded-lg p-5 transition hover:shadow-lg relative;
 }
 
 .service-card .title {
@@ -12,6 +12,10 @@
 
 .service-card .number {
   @apply text-2xl font-bold my-3 text-green-700;
+}
+
+.service-card .tag {
+  @apply inline-block text-xs px-2 py-1 bg-gray-200 rounded-full mb-3;
 }
 
 .actions {
