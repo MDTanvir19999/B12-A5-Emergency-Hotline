@@ -1,13 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Emergency Service Directory</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-50 font-sans">
+<body class="bg-gray-100 font-sans">
 
   <!-- Header -->
   <header class="bg-white shadow-md p-4 flex items-center justify-between">
@@ -18,7 +18,7 @@
     <div class="flex space-x-4 items-center">
       <span class="text-red-500">❤️ 0</span>
       <span class="text-green-600">✅ 100</span>
-      <button class="bg-green-500 text-white px-3 py-1 rounded-lg">2 Copy</button>
+      <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-lg transition">2 Copy</button>
     </div>
   </header>
 
@@ -28,109 +28,111 @@
     <p class="text-gray-600">Government Emergency Services at Your Fingertip – A Project by Government of the People’s Republic of Bangladesh</p>
   </div>
 
-  <!-- Main -->
-  <main class="grid grid-cols-1 md:grid-cols-3 gap-4 p-6 max-w-7xl mx-auto">
-    
-    <!-- Service Card -->
-    <div class="bg-white shadow-md rounded-lg p-4">
-      <h3 class="text-lg font-bold">National Emergency Number</h3>
-      <p class="text-sm text-gray-500">National Emergency</p>
-      <p class="text-2xl font-bold my-2">999</p>
-      <div class="flex gap-2">
-        <button onclick="copyNumber('999')" class="border px-3 py-1 rounded-lg">📋 Copy</button>
-        <a href="tel:999" class="bg-green-500 text-white px-3 py-1 rounded-lg">📞 Call</a>
+  <!-- Main Grid -->
+  <main class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 max-w-7xl mx-auto">
+
+    <!-- Service Card Example -->
+    <div class="service-card">
+      <h3 class="title">National Emergency Number</h3>
+      <p class="subtitle">National Emergency</p>
+      <p class="number">999</p>
+      <div class="actions">
+        <button onclick="copyNumber('999')" class="btn-secondary">📋 Copy</button>
+        <a href="tel:999" onclick="logCall('National Emergency Number','999')" class="btn-primary">📞 Call</a>
       </div>
     </div>
 
-    <div class="bg-white shadow-md rounded-lg p-4">
-      <h3 class="text-lg font-bold">Police Helpline Number</h3>
-      <p class="text-sm text-gray-500">Police</p>
-      <p class="text-2xl font-bold my-2">999</p>
-      <div class="flex gap-2">
-        <button onclick="copyNumber('999')" class="border px-3 py-1 rounded-lg">📋 Copy</button>
-        <a href="tel:999" class="bg-green-500 text-white px-3 py-1 rounded-lg">📞 Call</a>
+    <div class="service-card">
+      <h3 class="title">Police Helpline Number</h3>
+      <p class="subtitle">Police</p>
+      <p class="number">999</p>
+      <div class="actions">
+        <button onclick="copyNumber('999')" class="btn-secondary">📋 Copy</button>
+        <a href="tel:999" onclick="logCall('Police Helpline','999')" class="btn-primary">📞 Call</a>
       </div>
     </div>
 
-    <div class="bg-white shadow-md rounded-lg p-4">
-      <h3 class="text-lg font-bold">Fire Service Number</h3>
-      <p class="text-sm text-gray-500">Fire Service</p>
-      <p class="text-2xl font-bold my-2">999</p>
-      <div class="flex gap-2">
-        <button onclick="copyNumber('999')" class="border px-3 py-1 rounded-lg">📋 Copy</button>
-        <a href="tel:999" class="bg-green-500 text-white px-3 py-1 rounded-lg">📞 Call</a>
+    <div class="service-card">
+      <h3 class="title">Fire Service Number</h3>
+      <p class="subtitle">Fire Service</p>
+      <p class="number">999</p>
+      <div class="actions">
+        <button onclick="copyNumber('999')" class="btn-secondary">📋 Copy</button>
+        <a href="tel:999" onclick="logCall('Fire Service','999')" class="btn-primary">📞 Call</a>
       </div>
     </div>
 
-    <div class="bg-white shadow-md rounded-lg p-4">
-      <h3 class="text-lg font-bold">Ambulance Service</h3>
-      <p class="text-sm text-gray-500">Ambulance</p>
-      <p class="text-2xl font-bold my-2">1994-999999</p>
-      <div class="flex gap-2">
-        <button onclick="copyNumber('1994-999999')" class="border px-3 py-1 rounded-lg">📋 Copy</button>
-        <a href="tel:1994999999" class="bg-green-500 text-white px-3 py-1 rounded-lg">📞 Call</a>
+    <div class="service-card">
+      <h3 class="title">Ambulance Service</h3>
+      <p class="subtitle">Ambulance</p>
+      <p class="number">1994-999999</p>
+      <div class="actions">
+        <button onclick="copyNumber('1994-999999')" class="btn-secondary">📋 Copy</button>
+        <a href="tel:1994999999" onclick="logCall('Ambulance','1994-999999')" class="btn-primary">📞 Call</a>
       </div>
     </div>
 
-    <div class="bg-white shadow-md rounded-lg p-4">
-      <h3 class="text-lg font-bold">Women & Child Helpline</h3>
-      <p class="text-sm text-gray-500">Women & Child</p>
-      <p class="text-2xl font-bold my-2">109</p>
-      <div class="flex gap-2">
-        <button onclick="copyNumber('109')" class="border px-3 py-1 rounded-lg">📋 Copy</button>
-        <a href="tel:109" class="bg-green-500 text-white px-3 py-1 rounded-lg">📞 Call</a>
+    <div class="service-card">
+      <h3 class="title">Women & Child Helpline</h3>
+      <p class="subtitle">Women & Child</p>
+      <p class="number">109</p>
+      <div class="actions">
+        <button onclick="copyNumber('109')" class="btn-secondary">📋 Copy</button>
+        <a href="tel:109" onclick="logCall('Women & Child Helpline','109')" class="btn-primary">📞 Call</a>
       </div>
     </div>
 
-    <div class="bg-white shadow-md rounded-lg p-4">
-      <h3 class="text-lg font-bold">Anti-Corruption Helpline</h3>
-      <p class="text-sm text-gray-500">Govt.</p>
-      <p class="text-2xl font-bold my-2">106</p>
-      <div class="flex gap-2">
-        <button onclick="copyNumber('106')" class="border px-3 py-1 rounded-lg">📋 Copy</button>
-        <a href="tel:106" class="bg-green-500 text-white px-3 py-1 rounded-lg">📞 Call</a>
+    <div class="service-card">
+      <h3 class="title">Anti-Corruption Helpline</h3>
+      <p class="subtitle">Govt.</p>
+      <p class="number">106</p>
+      <div class="actions">
+        <button onclick="copyNumber('106')" class="btn-secondary">📋 Copy</button>
+        <a href="tel:106" onclick="logCall('Anti-Corruption','106')" class="btn-primary">📞 Call</a>
       </div>
     </div>
 
-    <div class="bg-white shadow-md rounded-lg p-4">
-      <h3 class="text-lg font-bold">Electricity Helpline</h3>
-      <p class="text-sm text-gray-500">Electricity</p>
-      <p class="text-2xl font-bold my-2">16216</p>
-      <div class="flex gap-2">
-        <button onclick="copyNumber('16216')" class="border px-3 py-1 rounded-lg">📋 Copy</button>
-        <a href="tel:16216" class="bg-green-500 text-white px-3 py-1 rounded-lg">📞 Call</a>
+    <div class="service-card">
+      <h3 class="title">Electricity Helpline</h3>
+      <p class="subtitle">Electricity</p>
+      <p class="number">16216</p>
+      <div class="actions">
+        <button onclick="copyNumber('16216')" class="btn-secondary">📋 Copy</button>
+        <a href="tel:16216" onclick="logCall('Electricity','16216')" class="btn-primary">📞 Call</a>
       </div>
     </div>
 
-    <div class="bg-white shadow-md rounded-lg p-4">
-      <h3 class="text-lg font-bold">Brac Helpline</h3>
-      <p class="text-sm text-gray-500">NGO</p>
-      <p class="text-2xl font-bold my-2">16445</p>
-      <div class="flex gap-2">
-        <button onclick="copyNumber('16445')" class="border px-3 py-1 rounded-lg">📋 Copy</button>
-        <a href="tel:16445" class="bg-green-500 text-white px-3 py-1 rounded-lg">📞 Call</a>
+    <div class="service-card">
+      <h3 class="title">Brac Helpline</h3>
+      <p class="subtitle">NGO</p>
+      <p class="number">16445</p>
+      <div class="actions">
+        <button onclick="copyNumber('16445')" class="btn-secondary">📋 Copy</button>
+        <a href="tel:16445" onclick="logCall('Brac','16445')" class="btn-primary">📞 Call</a>
       </div>
     </div>
 
-    <div class="bg-white shadow-md rounded-lg p-4">
-      <h3 class="text-lg font-bold">Bangladesh Railway Helpline</h3>
-      <p class="text-sm text-gray-500">Travel</p>
-      <p class="text-2xl font-bold my-2">163</p>
-      <div class="flex gap-2">
-        <button onclick="copyNumber('163')" class="border px-3 py-1 rounded-lg">📋 Copy</button>
-        <a href="tel:163" class="bg-green-500 text-white px-3 py-1 rounded-lg">📞 Call</a>
+    <div class="service-card">
+      <h3 class="title">Bangladesh Railway Helpline</h3>
+      <p class="subtitle">Travel</p>
+      <p class="number">163</p>
+      <div class="actions">
+        <button onclick="copyNumber('163')" class="btn-secondary">📋 Copy</button>
+        <a href="tel:163" onclick="logCall('Bangladesh Railway','163')" class="btn-primary">📞 Call</a>
       </div>
     </div>
 
   </main>
 
-  <!-- JS -->
-  <script>
-    function copyNumber(number) {
-      navigator.clipboard.writeText(number);
-      alert("Copied: " + number);
-    }
-  </script>
+  <!-- Call History -->
+  <aside class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-4 mt-6">
+    <div class="flex justify-between items-center mb-3">
+      <h3 class="font-bold text-lg">📖 Call History</h3>
+      <button onclick="clearHistory()" class="text-red-500 hover:underline">Clear</button>
+    </div>
+    <ul id="callHistory" class="space-y-2 text-sm text-gray-700"></ul>
+  </aside>
 
+  <script src="script.js"></script>
 </body>
 </html>
